@@ -5,19 +5,25 @@ plugins {
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 
+
 repositories {
+    mavenLocal()
+    maven { url "https://maven.aliyun.com/nexus/content/groups/public/"}
     mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/' }
 }
+
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 
-    // Gradle如果想要使用Lombok，不能像Maven一样直接导入Lombok的jar就行
-    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
-
-    // 想要使用Lombok，还需要使用导入注解处理器(在Maven中是默认会导入这个依赖的)
-    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+    testCompileOnly 'org.projectlombok:lombok:1.18.32'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
 
     // 如果只导入上述的依赖，@Data等注解已经可以正常使用了，但是想要使用@Slf4j去很方便地打印日志却并不行
     // 会报错无法找到程序包`lombok.extern.slf4j`不存在，但是打开外部库一看该包是存在的
