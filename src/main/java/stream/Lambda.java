@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.function.IntBinaryOperator;
 
 @Slf4j
-public class _01_Lambda {
+public class Lambda {
 
     public static  int calculateNum(IntBinaryOperator operator) {
         int a = 10;
