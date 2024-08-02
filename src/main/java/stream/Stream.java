@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
-public class stream {
+public class Stream {
 
     public static void main(String[] args) {
         List<Author> authors = getAuthors();
@@ -48,7 +48,6 @@ public class stream {
         author3.setBooks(books3);
         author4.setBooks(books4);
 
-        List<Author> authors = new ArrayList<>(Arrays.asList(author1, author2, author3, author4));
-        return authors;
+        return new ArrayList<>(Arrays.asList(author1, author2, author3, author4));
     }
 }
