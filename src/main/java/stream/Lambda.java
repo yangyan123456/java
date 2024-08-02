@@ -15,8 +15,14 @@ public class Lambda {
 
 
     public static void main(String[] args) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                log.info("=======hello======");
+            }
+        });
         new Thread(() -> log.info("=======hello======")).start();
-
+        calculateNum((left, right) -> left - right);
         int res = calculateNum((left, right) -> left * right);
         log.info("=======res = " + res + "===========");
     }
