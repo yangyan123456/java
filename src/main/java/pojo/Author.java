@@ -1,4 +1,4 @@
-package pojo;
+﻿package pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,14 +12,9 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class Author {
-    // id
     private Long id;
-    // 姓名
     private String name;
-    // 年龄
-    private String age;
-    // 简介
+    private int age;
     private String intro;
-    // 书籍
     private List<Book> books;
 }

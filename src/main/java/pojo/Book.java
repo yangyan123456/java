@@ -10,15 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class Book {
-    // id
     private Long id;
-    // 书名
     private String name;
-    // 分类
     private String category;
-    // 评分
     private Double score;
-    // 简介
     private String intro;
-
 }
