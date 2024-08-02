@@ -7,6 +7,7 @@ import pojo.Book;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 public class Stream {
@@ -14,6 +15,13 @@ public class Stream {
     public static void main(String[] args) {
         List<Author> authors = getAuthors();
         log.info(authors.toString());
+        authors.stream()
+                .filter(Objects::nonNull)
+                .distinct()
+                .filter(author -> author.getAge() < 18)
+                .
+
+        })
 
     }
 
